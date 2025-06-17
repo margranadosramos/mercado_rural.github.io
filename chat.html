@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Veterinario - Rural Market</title>
+  <link rel="stylesheet" href="chat.css" />
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <main class="chat-container">
+    <header class="chat-header">
+      <img src="img/perfil_chat.jpg" alt="Doctor Muuu" class="doctor-img" />
+      <h1 class="doctor-name">Doctor Muuu</h1>
+    </header>
+
+    <section id="chat-box" class="chat-box">
+      <!-- Mensajes aparecerán aquí -->
+    </section>
+
+    <footer class="input-area">
+      <input
+        type="text"
+        id="user-input"
+        class="chat-input"
+        placeholder="Ej. La vaca tiene fiebre..."
+        autocomplete="off"
+      />
+      <button id="send-btn" class="send-button" onclick="enviarPregunta()">Enviar</button>
+    </footer>
+  </main>
+
+
+
+
+  
+<footer class="menu-flotante">
+  <a href="inicio.html" class="menu-item">
+    <i class="fas fa-home"></i>
+    <span>Inicio</span>
+  </a>
+  <a href="chat.html" class="menu-item">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+  </a>
+  <a href="carrito.html" class="menu-item">
+    <i class="fas fa-shopping-cart"></i>
+    <span>Carrito</span>
+  </a>
+  <a href="notificaciones.html" class="menu-item">
+    <i class="fas fa-bell"></i>
+    <span>Notificaciones</span>
+  </a>
+  <a href="perfil.html" class="menu-item">
+    <i class="fas fa-user"></i>
+    <span>Perfil</span>
+  </a>
+</footer>
+
+
+
+
+  <script src="chat.js"></script>
+</body>
+</html>
+

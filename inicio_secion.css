@@ -1,0 +1,179 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('img/fondo1.jpg') center/cover no-repeat;
+  color: white;
+}
+
+/* Capa borrosa y opaca */
+.background, .overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -2;
+}
+
+.overlay {
+  background-color: rgba(30, 30, 30, 0.4);
+  backdrop-filter: blur(6px); /* efecto borroso */
+  z-index: -1;
+}
+
+/* Contenedor principal */
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+/* Caja del login */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  padding: 40px 30px;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+.login-box h1 {
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.login-box h1 span {
+  color: #00796b;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Campos del formulario */
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input:focus {
+  border-color: #00796b;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 121, 107, 0.3);
+}
+
+/* Botones */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #00796b;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #004d40;
+  transform: scale(1.02);
+}
+
+/* Texto alternativo de login */
+.alt-login {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.alt-login a {
+  color: #00796b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.alt-login a:hover {
+  text-decoration: underline;
+}
+
+/* Línea divisoria */
+.divider {
+  margin: 25px 0;
+  font-size: 14px;
+  color: #aaa;
+  position: relative;
+  text-align: center;
+}
+
+.divider span {
+  background-color: white;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background-color: #ccc;
+  z-index: 0;
+}
+
+/* Botones sociales */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social {
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.social:hover {
+  transform: scale(1.02);
+}
+
+.google {
+  background-color: #db4437;
+}
+
+.google:hover {
+  background-color: #c23321;
+}
+
+.apple {
+  background-color: #333;
+}
+
+.apple:hover {
+  background-color: #000;
+}

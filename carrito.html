@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="carrito.css" />
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <main>
+    <h1>Tu Carrito de Compras</h1>
+    <section id="carrito-productos">
+      <!-- Productos cargados dinámicamente -->
+    </section>
+
+    <section id="resumen-compra" style="display:none;">
+      <h2>Resumen de Compra</h2>
+      <p>Total sin envío: $<span id="subtotal">0.00</span></p>
+      <label for="departamento">Selecciona Departamento para envío:</label>
+      <select id="departamento">
+        <option value="">--Seleccione--</option>
+        <option value="managua">Managua</option>
+        <option value="jinotega">Jinotega</option>
+        <option value="esteli">Estelí</option>
+        <!-- Agrega más departamentos según tu lógica -->
+      </select>
+      <p>Costo envío: $<span id="costo-envio">0.00</span></p>
+      <p><strong>Total a pagar: $<span id="total-pagar">0.00</span></strong></p>
+
+      <button id="btn-pagar">Pagar</button>
+      <button id="btn-cancelar">Cancelar</button>
+    </section>
+<section id="formulario-pago" style="display:none;">
+  <h2>Formulario de Pago</h2>
+  <form id="form-pago">
+    <label>
+      Nombre en la tarjeta:
+      <input type="text" id="nombre-tarjeta" required />
+    </label>
+
+    <label>
+      Tipo de tarjeta:
+      <select id="tipo-tarjeta" required>
+        <option value="">--Seleccione--</option>
+        <option value="visa">Visa</option>
+        <option value="mastercard">MasterCard</option>
+        <option value="amex">American Express</option>
+        <option value="otro">Otro</option>
+      </select>
+    </label>
+
+    <label>
+      Número de tarjeta:
+      <input type="text" id="numero-tarjeta" maxlength="16" pattern="\d{16}" required />
+    </label>
+
+    <label>
+      Fecha de vencimiento (MM/AA):
+      <input type="text" id="fecha-venc" maxlength="5" pattern="\d{2}/\d{2}" placeholder="MM/AA" required />
+    </label>
+
+    <label>
+      CVV:
+      <input type="text" id="cvv" maxlength="4" pattern="\d{3,4}" required />
+    </label>
+
+    <label>
+      Dirección de envío:
+      <input type="text" id="direccion-envio" required />
+    </label>
+
+    <label>
+      Teléfono de contacto:
+      <input type="tel" id="telefono-contacto" pattern="[0-9]{8}" placeholder="Ej: 88888888" required />
+    </label>
+
+    <label>
+      Correo electrónico:
+      <input type="email" id="correo" required />
+    </label>
+
+    <label>
+      Confirmar correo electrónico:
+      <input type="email" id="confirmar-correo" required />
+    </label>
+
+    <label>
+      Comentarios (opcional):
+      <textarea id="comentarios" rows="3" placeholder="Indique cualquier instrucción adicional..."></textarea>
+    </label>
+
+    <label style="display: flex; align-items: center; gap: 10px;">
+      <input type="checkbox" id="acepto-terminos" required />
+      Acepto los <a href="#" target="_blank">términos y condiciones</a>
+    </label>
+
+    <button type="submit">Confirmar Compra</button>
+  </form>
+  <button id="btn-volver">Volver</button>
+</section>
+
+
+    <section id="factura" style="display:none;">
+      <h2>Factura</h2>
+      <canvas id="factura-canvas" width="600" height="400"></canvas>
+      <button id="btn-descargar-factura">Descargar Factura</button>
+      <button id="btn-nueva-compra">Nueva Compra</button>
+    </section>
+  </main>
+
+<footer class="menu-flotante">
+  <a href="inicio.html" class="menu-item">
+    <i class="fas fa-home"></i>
+    <span>Inicio</span>
+  </a>
+  <a href="chat.html" class="menu-item">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+  </a>
+  <a href="carrito.html" class="menu-item">
+    <i class="fas fa-shopping-cart"></i>
+    <span>Carrito</span>
+  </a>
+  <a href="notificaciones.html" class="menu-item">
+    <i class="fas fa-bell"></i>
+    <span>Notificaciones</span>
+  </a>
+  <a href="perfil.html" class="menu-item">
+    <i class="fas fa-user"></i>
+    <span>Perfil</span>
+  </a>
+</footer>
+  <script src="carrito.js" defer></script>
+</body>
+</html>

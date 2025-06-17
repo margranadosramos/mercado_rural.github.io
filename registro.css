@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(120deg, #e0f7fa, #fce4ec);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.registro-container {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+}
+
+.registro-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.registro-container h1 span {
+  color: #00796b;
+}
+
+form {
+  text-align: left;
+}
+
+.form-step {
+  display: none;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.form-step-active {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+select:focus,
+input[type="file"]:focus {
+  outline: none;
+  border-color: #00796b;
+}
+
+.btn {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: #004d40;
+}
+
+.prev-btn {
+  background-color: #aaa;
+}
+
+.prev-btn:hover {
+  background-color: #888;
+}
+
+.alt-login {
+  margin-top: 25px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.alt-login a {
+  color: #00796b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal (ventana emergente) */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 25px 30px;
+  border-radius: 15px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.close:hover {
+  color: #000;
+}

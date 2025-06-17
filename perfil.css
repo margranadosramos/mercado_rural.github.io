@@ -1,0 +1,425 @@
+/* Reset y fuente */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.904), rgba(0, 0, 0, 0.815)),
+    url('img/fondo_inicio.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #000000;
+  padding-bottom: 100px;
+  padding-top: 50px;
+  animation: fondoAnimado 30s ease infinite;
+}
+
+/* Animación suave del fondo */
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#btnMostrarFormulario {
+  background-color: #6b4c3b; /* Café principal */
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btnMostrarFormulario:hover {
+  background-color: #8b5e3c; /* Café más claro al pasar el mouse */
+  transform: scale(1.05);
+}
+
+
+
+header {
+  position: relative;
+  height: 80px;
+  margin-bottom: 40px;
+  background: transparent;
+  animation: fadeInDown 1s ease;
+}
+
+/* Centrar el título con posición absoluta */
+header h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Botón a la izquierda */
+header button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #6d4c41, #8d6e63);
+  border: none;
+  color: white;
+  padding: 12px 26px;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+header button:hover {
+  background: #5d4037;
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Contenido principal */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Perfil */
+.perfil-seccion {
+  background: #ffffffcc;
+  border-radius: 16px;
+  padding: 30px;
+  flex: 1 1 350px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.perfil-seccion:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.perfil-seccion h2 {
+  margin-bottom: 20px;
+  color: #4e342e;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Imagen de perfil */
+.foto-perfil-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#fotoPerfil {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #a1887f;
+  background-color: #efebe9;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#fotoPerfil:hover {
+  transform: scale(1.08);
+}
+
+#inputFotoPerfil {
+  cursor: pointer;
+  color: #5d4037;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* Formulario */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #4e342e;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #bcaaa4;
+  background-color: #fefefe;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #8d6e63;
+  box-shadow: 0 0 6px #a1887f;
+  outline: none;
+}
+
+form button {
+  background-color: #6d4c41;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+form button:hover {
+  background: #4e342e;
+  transform: scale(1.05);
+}
+
+/* Productos */
+#productosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+}
+
+.producto-item {
+  background: #fff3e0;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.producto-item:hover {
+  transform: scale(1.02);
+}
+
+.producto-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #a1887f;
+}
+
+.producto-info {
+  flex-grow: 1;
+}
+
+.producto-info h3 {
+  margin-bottom: 8px;
+  color: #4e342e;
+  font-size: 1.2rem;
+}
+
+.producto-info p {
+  font-size: 0.95rem;
+  color: #6d4c41;
+  margin-bottom: 4px;
+}
+
+.producto-info span {
+  font-weight: bold;
+  color: #8bc34a;
+  font-size: 1rem;
+}
+
+/* Botones de acción */
+.producto-acciones button {
+  background-color: #a1887f;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.producto-acciones button:hover {
+  background-color: #6d4c41;
+}
+
+/* Animaciones generales */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#publicarProducto {
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+  header {
+    position: relative;
+    height: auto; /* Para que crezca con su contenido */
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  header h1 {
+    position: static; /* Quitar absolute */
+    transform: none;
+    font-size: 2rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  header button {
+    position: static; /* Quitar absolute */
+    transform: none;
+    width: 160px;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 30px;
+  }
+}
+  main {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    gap: 30px;
+  }
+
+  .perfil-seccion {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #productosContainer {
+    max-height: 400px;
+    padding-right: 5px;
+  }
+
+  .producto-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px;
+  }
+
+  .producto-item img {
+    width: 100%;
+    height: auto;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .producto-info h3 {
+    text-align: center;
+  }
+
+  .producto-acciones button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #btnMostrarFormulario {
+    width: 80%;
+    margin: 20px auto 0;
+    display: block;
+    font-size: 1rem;
+  }
+
+
+
+
+
+
+
+
+.menu-flotante {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 30, 0.8);
+  border-radius: 40px;
+  box-shadow: 0 0 15px rgba(78, 57, 18, 0.6);
+  display: flex;
+  justify-content: space-around;
+  width: 360px; /* un poco más ancho para 5 íconos */
+  padding: 12px 0;
+  z-index: 1000;
+}
+
+.menu-flotante .menu-item {
+  color: #fde76a;
+  text-decoration: none;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-flotante .menu-item i {
+  pointer-events: none;
+}
+
+.menu-flotante .menu-item span {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.menu-flotante .menu-item:hover,
+.menu-flotante .menu-item:focus {
+  color: #ffda35;
+  outline: none;
+}
+
+
+
+

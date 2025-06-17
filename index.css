@@ -1,0 +1,71 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pantalla-inicio {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo1, #logo2 {
+  position: absolute;
+  width: 200px;
+  opacity: 0;
+}
+
+.mostrar-logo1 {
+  animation: zoomOutFade 3s ease-in-out forwards;
+}
+
+.mostrar-logo2 {
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes zoomOutFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive ajustes adicionales */
+@media (max-width: 768px) {
+  #logo1, #logo2 {
+    max-width: 80vw;
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  #logo1, #logo2 {
+    max-width: 90vw;
+    max-height: 40vh;
+  }
+}

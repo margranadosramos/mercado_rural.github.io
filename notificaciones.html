@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notificaciones</title>
+  <link rel="stylesheet" href="notificaciones.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Notificaciones</h1>
+    <div id="lista-notificaciones" class="notificaciones"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="detalle-notificacion" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-contenido" role="document">
+      <span id="cerrar-modal" aria-label="Cerrar modal" role="button" tabindex="0">&times;</span>
+      <h2 id="detalle-titulo"></h2>
+      <p id="detalle-descripcion"></p>
+      <p><strong>Distribuidor:</strong> <span id="detalle-distribuidor"></span></p>
+      <p><strong>Pedido:</strong> <span id="detalle-pedido"></span></p>
+      <p><strong>Fecha:</strong> <span id="detalle-fecha"></span></p>
+      <p><strong>Contacto:</strong> <a id="detalle-contacto" href="#" target="_blank" rel="noopener noreferrer"></a></p>
+      <div class="imagenes">
+        <img id="img-producto" src="" alt="Imagen del producto" />
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="menu-flotante">
+  <a href="inicio.html" class="menu-item">
+    <i class="fas fa-home"></i>
+    <span>Inicio</span>
+  </a>
+  <a href="chat.html" class="menu-item">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+  </a>
+  <a href="carrito.html" class="menu-item">
+    <i class="fas fa-shopping-cart"></i>
+    <span>Carrito</span>
+  </a>
+  <a href="notificaciones.html" class="menu-item">
+    <i class="fas fa-bell"></i>
+    <span>Notificaciones</span>
+  </a>
+  <a href="perfil.html" class="menu-item">
+    <i class="fas fa-user"></i>
+    <span>Perfil</span>
+  </a>
+</footer>
+
+
+  <script src="notificaciones.js"></script>
+</body>
+</html>

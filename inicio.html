@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rural-market</title>
+  <link rel="stylesheet" href="inicio.css">
+  <script defer src="busqueda.js"></script>
+  <script defer src="inicio.js"></script>
+  <script defer src="descuentos.js"></script>
+  <script defer src="categorias.js"></script>
+  <script defer src="nuevo.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+  <div class="fondo"></div>
+
+  <header>
+    <input type="text" id="barra-busqueda" placeholder="Buscar productos...">
+  </header>
+
+  <nav class="accesos-rapidos">
+    <button  class="farmacos1" onclick="mostrarCategoria('farmacos')">Fármacos</button>
+    <button class="accesorios1" onclick="mostrarCategoria('accesorios')">Accesorios</button>
+    <button class="ganado1" onclick="mostrarCategoria('ganado')">Ganado</button>
+  </nav>
+
+  <section id="resultados-busqueda" class="resultados"></section>
+
+
+  
+
+
+
+<!-- MODAL DETALLES DEL FÁRMACO -->
+<div id="modal_detalles_farmacos" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal('modal_detalles_farmacos')">&times;</span>
+    <img id="detalleImagen" src="" alt="Imagen producto" class="img-detalle">
+    <h2 id="detalleNombre"></h2>
+    <p id="detalleDescripcion"></p>
+    <p><strong>Laboratorio:</strong> <span id="detalleLaboratorio"></span></p>
+    <p><strong>Distribuidor:</strong> <span id="detalleDistribuidor"></span></p>
+    <p><strong>Precio:</strong> <span id="detallePrecio"></span></p>
+    <button onclick="mostrarModalCantidad()">Añadir al carrito</button>
+  </div>
+</div>
+
+<!-- MODAL PARA INGRESAR CANTIDAD -->
+<div id="modal_busqueda_farmacos" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal('modal_busqueda_farmacos')">&times;</span>
+    <h3>¿Cuántas unidades deseas añadir?</h3>
+    <input type="number" id="cantidadProducto" min="1" value="1">
+    <button onclick="agregarAlCarrito()">Confirmar</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+  <section class="PROMOCIONES_GANADERAS">
+<section id="carrusel-promociones" class="seccion-promociones">
+  <h1 class="tit1">Promociones del mes</h1>
+  <div class="carrusel-contenedor" style="justify-content: center;"></div>
+  <button class="btn-carrusel btn-anterior" aria-label="Anterior">&#10094;</button>
+  <button class="btn-carrusel btn-siguiente" aria-label="Siguiente">&#10095;</button>
+</section>
+
+<div id="modalVitaminas" class="modal"></div>
+<div id="modalAgujas" class="modal"></div>
+<div id="modalDezametazona" class="modal"></div>
+
+<div id="modalCantidad" class="modal-cantidad" style="display:none;">
+  <div class="modal-cantidad-content animate">
+    <span class="close-cantidad">&times;</span>
+    <h3>¿Cuántas unidades deseas añadir?</h3>
+    <input type="number" id="cantidadInput" min="1" value="1" />
+    <button id="confirmarCantidad">Añadir</button>
+  </div>
+</div>
+
+</section>
+
+
+
+  <section class="DESCUENTOS_GANADEROS" style="color: #000;">
+<section id="descuentos" class="seccion-descuentos">
+  <h2 class="titulo-descuentos">Ofertas Especiales</h2>
+  <div class="contenedor-descuentos">
+    <div class="card-descuento animar" data-id="desc1">
+      <img src="img/remolques.jpg" alt="Remolques con descuento">
+      <h3>20% de Descuento</h3>
+      <p>En todos los remolques seleccionados. ¡Aprovecha esta oferta por tiempo limitado!</p>
+      <button class="btn-detalle">Ver detalles</button>
+    </div>
+    <div class="card-descuento animar" data-id="desc2">
+      <img src="img/pala.jpg" alt="Pala con descuento">
+      <h3>25% de Descuento</h3>
+      <p>Palas reforzadas con descuento exclusivo este mes.</p>
+      <button class="btn-detalle">Ver detalles</button>
+    </div>
+    <div class="card-descuento animar" data-id="desc3">
+      <img src="img/mamadera.jpg" alt="Mamadera con descuento">
+      <h3>30% de Descuento</h3>
+      <p>Mamaderas para ganado a un precio increíble. ¡Solo este mes!</p>
+      <button class="btn-detalle">Ver detalles</button>
+    </div>
+  </div>
+</section>
+</section>
+
+
+  <section class="NUEVOS_PRODUCTOS_GANADEROS">
+<h2 class="titulo-nuevos">Nuevos Productos Exclusivos</h2>
+<div class="contenedor-nuevos">
+  <div class="card-nuevo">
+    <img src="img/básculas.jpg" alt="Báscula">
+    <h3>Básculas Digitales</h3>
+    <p>Precisión y calidad para tu ganado.</p>
+    <button class="btn-premium">Ver más</button>
+  </div>
+  <div class="card-nuevo">
+    <img src="img/lazo.jpg" alt="Lazo">
+    <h3>Lazo de Alta Resistencia</h3>
+    <p>Material reforzado para uso intensivo.</p>
+    <button class="btn-premium">Ver más</button>
+  </div>
+  <div class="card-nuevo">
+    <img src="img/ivermectina.jpg" alt="Ivermectina">
+    <h3>Ivermectina Premium</h3>
+    <p>Protección total y prolongada.</p>
+    <button class="btn-premium">Ver más</button>
+  </div>
+</div>
+</section>
+
+
+
+<footer class="menu-flotante">
+  <a href="inicio.html" class="menu-item">
+    <i class="fas fa-home"></i>
+    <span>Inicio</span>
+  </a>
+  <a href="chat.html" class="menu-item">
+    <i class="fas fa-comments"></i>
+    <span>Chat</span>
+  </a>
+  <a href="carrito.html" class="menu-item">
+    <i class="fas fa-shopping-cart"></i>
+    <span>Carrito</span>
+  </a>
+  <a href="notificaciones.html" class="menu-item">
+    <i class="fas fa-bell"></i>
+    <span>Notificaciones</span>
+  </a>
+  <a href="perfil.html" class="menu-item">
+    <i class="fas fa-user"></i>
+    <span>Perfil</span>
+  </a>
+</footer>
+
+</body>
+</html>
